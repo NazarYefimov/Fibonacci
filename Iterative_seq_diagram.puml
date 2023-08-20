@@ -1,0 +1,22 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+title Iterative Fibonacci
+
+participant Fibonacci
+note over Fibonacci: iterativeFibonacci(n: int)
+activate Fibonacci
+Fibonacci -> Fibonacci: n <= 1?
+  alt n <= 1
+    Fibonacci --> Fibonacci: return n
+  else
+    Fibonacci -> Fibonacci: prev = 0, curr = 1
+    loop (i = 2; i <= n)
+      Fibonacci -> Fibonacci: temp = curr, curr = prev + curr, prev = temp
+    end
+    Fibonacci --> Fibonacci: return curr
+  end
+deactivate Fibonacci
+@enduml

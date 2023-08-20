@@ -1,0 +1,17 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+title Dynamic Programming Fibonacci
+
+participant Fibonacci
+note over Fibonacci: dynamicProgrammingFibonacci(n: int)
+activate Fibonacci
+Fibonacci -> Fibonacci: fibArray[0] = 0, fibArray[1] = 1
+loop (i = 2; i <= n)
+  Fibonacci -> Fibonacci: fibArray[i] = fibArray[i - 1] + fibArray[i - 2]
+end
+Fibonacci --> Fibonacci: return fibArray[n]
+deactivate Fibonacci
+@enduml

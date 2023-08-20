@@ -1,0 +1,18 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+title Recursive Fibonacci
+
+participant Fibonacci
+note over Fibonacci: recursiveFibonacci(n: int)
+activate Fibonacci
+Fibonacci -> Fibonacci: n <= 1?
+  alt n <= 1
+    Fibonacci --> Fibonacci: return n
+  else
+    Fibonacci -> Fibonacci: return recursiveFibonacci(n - 1) + recursiveFibonacci(n - 2)
+  end
+deactivate Fibonacci
+@enduml
